@@ -1,0 +1,43 @@
+[2023-05-11 04:04:46,212] [INFO] [D:\python_file\auto_fram_5.9\utils\logger.py : info:49 , -----å¼€å§‹æ‰§è¡Œæµ‹è¯•-----
+[2023-05-11 04:04:57,809] [INFO] [D:\python_file\auto_fram_5.9\utils\logger.py : info:49 , -----å¼€å§‹æ‰§è¡Œæµ‹è¯•-----
+½øÈë°Ù¶ÈÊ×Ò³
+-----¿ªÊ¼Ö´ĞĞ²âÊÔÓÃÀı-----
+¶ÏÑÔ³É¹¦
+Ê§°Ü
+¶ÏÑÔÊ§°Ü'µÇÂ¼' != '111µÇÂ¼'
+- µÇÂ¼
++ 111µÇÂ¼
+ : ÍË³öµÇÂ¼
+½ØÍ¼³É¹¦ÒÑ¾­´æ´¢ÔÚ: D:\python_file\auto_fram_5.9\output\screen_shoots\testcase_failed_screen\1684473811055.png
+-----²âÊÔÓÃÀıÒÑÖ´ĞĞÍê³É-----
+½ØÍ¼³É¹¦ÒÑ¾­´æ´¢ÔÚ: D:\python_file\auto_fram_5.9\output\screen_shoots\testcase_success_screen\1684473811411.png
+½øÈë°Ù¶ÈÊ×Ò³
+-----¿ªÊ¼Ö´ĞĞ²âÊÔÓÃÀı-----
+¶ÏÑÔ³É¹¦
+¶ÏÑÔÊ§°Ü'µÇÂ¼' != '111µÇÂ¼'
+- µÇÂ¼
++ 111µÇÂ¼
+ : ÍË³öµÇÂ¼
+½ØÍ¼³É¹¦ÒÑ¾­´æ´¢ÔÚ: D:\python_file\auto_fram_5.9\output\screen_shoots\testcase_failed_screen\1684474291590.png
+-----²âÊÔÓÃÀıÒÑÖ´ĞĞÍê³É-----
+½ØÍ¼³É¹¦ÒÑ¾­´æ´¢ÔÚ: D:\python_file\auto_fram_5.9\output\screen_shoots\testcase_success_screen\1684474291952.png
+½øÈë°Ù¶ÈÊ×Ò³
+-----¿ªÊ¼Ö´ĞĞ²âÊÔÓÃÀı-----
+¶ÏÑÔ³É¹¦
+¶ÏÑÔÊ§°Ü'µÇÂ¼' != '111µÇÂ¼'
+- µÇÂ¼
++ 111µÇÂ¼
+
+½ØÍ¼³É¹¦ÒÑ¾­´æ´¢ÔÚ: D:\python_file\auto_fram_5.9\output\screen_shoots\testcase_failed_screen\1684474754424.png
+-----²âÊÔÓÃÀıÒÑÖ´ĞĞÍê³É-----
+½ØÍ¼³É¹¦ÒÑ¾­´æ´¢ÔÚ: D:\python_file\auto_fram_5.9\output\screen_shoots\testcase_success_screen\1684474754796.png
+½øÈë°Ù¶ÈÊ×Ò³
+-----¿ªÊ¼Ö´ĞĞ²âÊÔÓÃÀı-----
+¶ÏÑÔ³É¹¦
+¶ÏÑÔÊ§°Ü'µÇÂ¼' != '111µÇÂ¼'
+- µÇÂ¼
++ 111µÇÂ¼
+
+¶ÏÑÔÊ§°Ü£¬½ØÍ¼³É¹¦£¬ÒÑ´æÈë: D:\python_file\auto_fram_5.9\output\screen_shoots\testcase_failed_screen\1684475347599.png
+-----²âÊÔÓÃÀıÒÑÖ´ĞĞÍê³É-----
+ÓÃÀıÖ´ĞĞÍê±Ï£¬½ØÍ¼³É¹¦£¬ÒÑ´æÈë: D:\python_file\auto_fram_5.9\output\screen_shoots\testcase_success_screen\1684475347953.png

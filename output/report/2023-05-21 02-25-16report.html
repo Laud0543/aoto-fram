@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2023-05-21 02:25:16</p>
+<p class='attribute'><strong>Duration:</strong> 0:15:29.967345</p>
+<p class='attribute'><strong>Status:</strong> Pass 27 Failure 1 Error 4</p>
+
+<p class='description'>测试结果如下</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>project_name.testcase.news.test_hot_news.test_News</td>
+    <td>18</td>
+    <td>14</td>
+    <td>1</td>
+    <td>3</td>
+    <td><a href="javascript:showClassDetail('c1',18)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_baijiahao_picture1_1___xpath_________id__baijia___div_2__div_div_1__div_a_1___</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_baijiahao_picture1_2___xpath_________id__baijia___div_2__div_div_2__div_a_1___</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_baijiahao_picture1_3___xpath_________id__baijia___div_2__div_div_2__div_2__a_1___</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_baijiahao_picture1_4___xpath_________id__baijia_aside_recommend___div_div_div_div_a_1___</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_hot_news1_01___xpath_________id__pane_news___div_ul_li_1__strong_a__: :param data: 测试数据</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_hot_news1_02___xpath_________id__pane_news___ul_1__li_1__a__: :param data: 测试数据</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft1.7' class='none'>
+    <td class='errorCase'><div class='testcase'>test_hot_news1_03___xpath_________id__pane_news___ul_2__li_1__a__: :param data: 测试数据</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.7')" >
+        error</a>
+
+    <div id='div_ft1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.7: Traceback (most recent call last):
+  File "D:\python\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_file\auto_fram_5.9\project_name\testcase\news\test_hot_news.py", line 39, in test_hot_news1
+    assert text1 in news.web_title(loadtime=2)
+  File "D:\python_file\auto_fram_5.9\page\basepage.py", line 262, in web_title
+    title = self.driver.title
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 453, in title
+    resp = self.execute(Command.GET_TITLE)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: timeout: Timed out receiving message from renderer: 300.000
+  (Session info: chrome=113.0.5672.127)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x011DDCE3+50899]
+	(No symbol) [0x0116E111]
+	(No symbol) [0x01075588]
+	(No symbol) [0x010683BF]
+	(No symbol) [0x0106820C]
+	(No symbol) [0x01066F06]
+	(No symbol) [0x0106778A]
+	(No symbol) [0x010706F5]
+	(No symbol) [0x0107AB28]
+	(No symbol) [0x0107D4D6]
+	(No symbol) [0x01067AE3]
+	(No symbol) [0x0107A9F1]
+	(No symbol) [0x010CDF77]
+	(No symbol) [0x010BB6F6]
+	(No symbol) [0x01097708]
+	(No symbol) [0x0109886D]
+	GetHandleVerifier [0x01443EAE+2566302]
+	GetHandleVerifier [0x014792B1+2784417]
+	GetHandleVerifier [0x0147327C+2759788]
+	GetHandleVerifier [0x01275740+672048]
+	(No symbol) [0x01178872]
+	(No symbol) [0x011741C8]
+	(No symbol) [0x011742AB]
+	(No symbol) [0x011671B7]
+	BaseThreadInitThunk [0x762200C9+25]
+	RtlGetAppContainerNamedObjectPath [0x76FB7B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x76FB7B1E+238]
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.8' class='none'>
+    <td class='errorCase'><div class='testcase'>test_hot_news1_04___xpath_________id__pane_news___ul_3__li_1__a__: :param data: 测试数据</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.8')" >
+        error</a>
+
+    <div id='div_ft1.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.8: Traceback (most recent call last):
+  File "D:\python\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_file\auto_fram_5.9\project_name\testcase\news\test_hot_news.py", line 39, in test_hot_news1
+    assert text1 in news.web_title(loadtime=2)
+  File "D:\python_file\auto_fram_5.9\page\basepage.py", line 262, in web_title
+    title = self.driver.title
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 453, in title
+    resp = self.execute(Command.GET_TITLE)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: timeout: Timed out receiving message from renderer: 300.000
+  (Session info: chrome=113.0.5672.127)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x011DDCE3+50899]
+	(No symbol) [0x0116E111]
+	(No symbol) [0x01075588]
+	(No symbol) [0x010683BF]
+	(No symbol) [0x0106820C]
+	(No symbol) [0x01066F06]
+	(No symbol) [0x0106778A]
+	(No symbol) [0x010706F5]
+	(No symbol) [0x0107AB28]
+	(No symbol) [0x0107D4D6]
+	(No symbol) [0x01067AE3]
+	(No symbol) [0x0107A9F1]
+	(No symbol) [0x010CDF77]
+	(No symbol) [0x010BB6F6]
+	(No symbol) [0x01097708]
+	(No symbol) [0x0109886D]
+	GetHandleVerifier [0x01443EAE+2566302]
+	GetHandleVerifier [0x014792B1+2784417]
+	GetHandleVerifier [0x0147327C+2759788]
+	GetHandleVerifier [0x01275740+672048]
+	(No symbol) [0x01178872]
+	(No symbol) [0x011741C8]
+	(No symbol) [0x011742AB]
+	(No symbol) [0x011671B7]
+	BaseThreadInitThunk [0x762200C9+25]
+	RtlGetAppContainerNamedObjectPath [0x76FB7B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x76FB7B1E+238]
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_hot_news1_05___xpath_________id__pane_news___ul_5__li_1__a__: :param data: 测试数据</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_hot_news1_06___xpath_________id__imgTitle___a_strong__: :param data: 测试数据</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft1.11' class='none'>
+    <td class='failCase'><div class='testcase'>test_hot_news1_07___xpath_________id__news_hotwords___div_2__ul_li_1__a__: :param data: 测试数据</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.11')" >
+        fail</a>
+
+    <div id='div_ft1.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.11: Traceback (most recent call last):
+  File "D:\python\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_file\auto_fram_5.9\project_name\testcase\news\test_hot_news.py", line 39, in test_hot_news1
+    assert text1 in news.web_title(loadtime=2)
+AssertionError
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.12' class='none'>
+    <td class='errorCase'><div class='testcase'>test_hot_news1_08____xpath_________id__baijia___div_3__div_ul_1__li_1__a____: :param data: 测试数据</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.12')" >
+        error</a>
+
+    <div id='div_ft1.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.12: Traceback (most recent call last):
+  File "D:\python\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\python_file\auto_fram_5.9\project_name\testcase\news\test_hot_news.py", line 34, in test_hot_news1
+    text1 = news.locator(data).text[:3]
+  File "D:\python_file\auto_fram_5.9\page\basepage.py", line 66, in locator
+    element = WebDriverWait(self.driver, 10).until(lambda x: x.find_element(*locator))
+  File "D:\python\lib\site-packages\selenium\webdriver\support\wait.py", line 78, in until
+    value = method(self._driver)
+  File "D:\python_file\auto_fram_5.9\page\basepage.py", line 66, in &lt;lambda&gt;
+    element = WebDriverWait(self.driver, 10).until(lambda x: x.find_element(*locator))
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 1251, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+  File "D:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidArgumentException: Message: invalid argument: 'using' must be a string
+  (Session info: chrome=113.0.5672.127)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x011DDCE3+50899]
+	(No symbol) [0x0116E111]
+	(No symbol) [0x01075588]
+	(No symbol) [0x010A09EC]
+	(No symbol) [0x010A0AFB]
+	(No symbol) [0x010CF902]
+	(No symbol) [0x010BB944]
+	(No symbol) [0x010CE01C]
+	(No symbol) [0x010BB6F6]
+	(No symbol) [0x01097708]
+	(No symbol) [0x0109886D]
+	GetHandleVerifier [0x01443EAE+2566302]
+	GetHandleVerifier [0x014792B1+2784417]
+	GetHandleVerifier [0x0147327C+2759788]
+	GetHandleVerifier [0x01275740+672048]
+	(No symbol) [0x01178872]
+	(No symbol) [0x011741C8]
+	(No symbol) [0x011742AB]
+	(No symbol) [0x011671B7]
+	BaseThreadInitThunk [0x762200C9+25]
+	RtlGetAppContainerNamedObjectPath [0x76FB7B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x76FB7B1E+238]
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_hot_news1_09___xpath_________id__baijia___div_3__div_ul_2__li_1__a__: :param data: 测试数据</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_hot_news1_10___xpath_________id__baijia___div_3__div_ul_3__li_1__a__: :param data: 测试数据</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_hot_news5</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.16' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_input_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.16')" >
+        pass</a>
+
+    <div id='div_pt1.16' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.16').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.16: æ­è¨æå22222
+raise AssertionError å¼å¸¸ 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_lunbonews7</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.18' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_rednews</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.18')" >
+        pass</a>
+
+    <div id='div_pt1.18' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.18').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.18: æ­è¨å¤±è´¥111111111
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>project_name.testcase.news.test_finace.test_Finance_News</td>
+    <td>4</td>
+    <td>4</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',4)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_Stock_inquiry2</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_finance_news1_1___xpath_________id__caijing___div_2__ul_1__li_1__a__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_finance_news1_2___xpath_________id__caijing___div_2__ul_2__li_1__a__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt2.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_finance_news1_3___xpath_________id__caijing___div_3__div_div_2__div_div_1__div_a_2___</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>project_name.testcase.news.test_view.test_view_news</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',5)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_view_news_1___xpath_________id__guonei___div_2__ul_1__li_1__a__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_view_news_2___xpath_________id__guonei___div_2__ul_2__li_1__a__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_view_news_3___xpath_________id__civil_aside_tophit___div_2__ol_li_1__a__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_view_news_4___xpath_________id__aside_civil_pic___div_2__div_div_div_1__a_2___</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt3.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_view_news_5___xpath_________id__aside_civil_pic___div_2__div_div_div_1__a_2___</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='passClass'>
+    <td>project_name.testcase.news.test_area.test_area_news</td>
+    <td>4</td>
+    <td>4</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',4)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_area_info</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_area_news1</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_area_pic2</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt4.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_switcharea_and_checknews</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>project_name.testcase.main_page.test_main_page.test_main_page</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='ft5.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_login_02</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
+        error</a>
+
+    <div id='div_ft5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.1: Traceback (most recent call last):
+  File "D:\python_file\auto_fram_5.9\project_name\testcase\main_page\test_main_page.py", line 56, in test_login_02
+    self.assertEqual_new(mainpage.get_login_assert_text(), 'å°å°æLY',self.driver)
+  File "D:\python_file\auto_fram_5.9\page\mainpage.py", line 43, in get_login_assert_text
+    return self.locator(login_assert).text
+  File "D:\python_file\auto_fram_5.9\page\basepage.py", line 66, in locator
+    element = WebDriverWait(self.driver, 10).until(lambda x: x.find_element(*locator))
+  File "D:\python\lib\site-packages\selenium\webdriver\support\wait.py", line 89, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x011DDCE3+50899]
+	(No symbol) [0x0116E111]
+	(No symbol) [0x01075588]
+	(No symbol) [0x010A08F9]
+	(No symbol) [0x010A0AFB]
+	(No symbol) [0x010CF902]
+	(No symbol) [0x010BB944]
+	(No symbol) [0x010CE01C]
+	(No symbol) [0x010BB6F6]
+	(No symbol) [0x01097708]
+	(No symbol) [0x0109886D]
+	GetHandleVerifier [0x01443EAE+2566302]
+	GetHandleVerifier [0x014792B1+2784417]
+	GetHandleVerifier [0x0147327C+2759788]
+	GetHandleVerifier [0x01275740+672048]
+	(No symbol) [0x01178872]
+	(No symbol) [0x011741C8]
+	(No symbol) [0x011742AB]
+	(No symbol) [0x011671B7]
+	BaseThreadInitThunk [0x762200C9+25]
+	RtlGetAppContainerNamedObjectPath [0x76FB7B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x76FB7B1E+238]
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>32</td>
+    <td>27</td>
+    <td>1</td>
+    <td>4</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

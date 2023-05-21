@@ -1,0 +1,42 @@
+2023-05-20 11:54:55,042 ERROR   :connectDatabase failed
+2023-05-20 11:54:55,042 INFO    :查询失败
+2023-05-20 11:55:05,054 ERROR   :connectDatabase failed
+2023-05-20 11:55:05,054 INFO    :查询失败
+2023-05-20 11:55:12,680 ERROR   :connectDatabase failed
+2023-05-20 11:55:12,680 INFO    :查询失败
+2023-05-20 11:55:12,683 ERROR   :connectDatabase failed
+2023-05-20 11:55:12,683 INFO    :查询失败
+2023-05-20 11:55:17,749 ERROR   :connectDatabase failed
+2023-05-20 11:55:17,750 INFO    :查询失败
+2023-05-20 11:55:17,764 ERROR   :connectDatabase failed
+2023-05-20 11:55:17,764 INFO    :查询失败
+2023-05-20 11:56:14,144 ERROR   :execute failed: select * from database.table limit %s;
+2023-05-20 11:56:14,145 ERROR   :params: 1
+2023-05-20 11:56:14,145 INFO    :查询失败
+2023-05-20 11:56:14,147 ERROR   :execute failed: select * from database.table limit %s;
+2023-05-20 11:56:14,147 ERROR   :params: 1
+2023-05-20 11:56:14,148 INFO    :查询失败
+2023-05-20 12:02:19,328 ERROR   :execute failed: select * from test.test1 limit 1;
+2023-05-20 12:02:19,328 ERROR   :params: 1
+2023-05-20 12:02:19,329 INFO    :查询失败
+2023-05-20 12:02:19,330 ERROR   :execute failed: select * from test.test1 limit 1;
+2023-05-20 12:02:19,330 ERROR   :params: 1
+2023-05-20 12:02:19,331 INFO    :查询失败
+2023-05-20 12:08:23,631 ERROR   :execute failed: select * from test1 limit;
+2023-05-20 12:08:23,632 ERROR   :params: 1
+2023-05-20 12:08:23,632 INFO    :查询失败
+2023-05-20 12:08:23,634 ERROR   :execute failed: select * from test1 limit;
+2023-05-20 12:08:23,634 ERROR   :params: 1
+2023-05-20 12:08:23,634 INFO    :查询失败
+2023-05-20 12:08:40,657 ERROR   :execute failed: select * from test1;
+2023-05-20 12:08:40,658 ERROR   :params: 1
+2023-05-20 12:08:40,658 INFO    :查询失败
+2023-05-20 12:08:40,659 ERROR   :execute failed: select * from test1;
+2023-05-20 12:08:40,660 ERROR   :params: 1
+2023-05-20 12:08:40,660 INFO    :查询失败
+2023-05-20 12:21:38,305 INFO    :查询成功((1, 'user1', None), (2, 'user2', None))
+2023-05-20 12:22:29,536 INFO    :查询成功((1, 'user1', None), (2, 'user2', None))
+2023-05-20 12:23:28,454 INFO    :查询成功((1, 'user1', None), (2, 'user2', None))
+2023-05-20 12:23:28,479 INFO    :查询成功(1, 'user1', None)
+2023-05-20 12:28:44,563 INFO    :查询成功((1, 'user1', None), (2, 'user2', None))
+2023-05-20 12:28:44,582 INFO    :查询成功(1, 'user1', None)
