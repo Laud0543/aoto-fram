@@ -38,10 +38,10 @@ if __name__ == '__main__':
 
     e = Email(title='百度搜素测试报告',
                   message='这是今天的测试报告，请查收！',
-                  receiver='870246051@qq.com',
-                  server='smtp.163.com',
-                  sender='laud_0543@163.com',
-                  password='EUZBSYJNNNYXZYPP',
+                  receiver='',
+                  server='',
+                  sender='',
+                  password='',
                   path=filename
                   )
     e.send()

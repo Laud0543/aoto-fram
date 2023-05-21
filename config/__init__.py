@@ -57,10 +57,10 @@ class Config:
 
 #邮件配置
 message='这是今天的测试报告，请查收！', #标题
-receiver='870246051@qq.com',  #邮件接收人,接受list
+receiver='',  #邮件接收人,接受list
 server='smtp.163.com', #邮件服务器
-sender='laud_0543@163.com',  # 发送者
-password='EUZBSYJNNNYXZYPP'  #开启邮件服务器密码
+sender='',  # 发送者
+password=''  #开启邮件服务器密码
 
 
 # database configuration
